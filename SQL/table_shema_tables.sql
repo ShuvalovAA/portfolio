@@ -1,7 +1,7 @@
 SELECT reference_to,
         attr1.attname AS source_key,
         reference_from,
-        attr2.attname AS references_key
+        attr2.attname AS referencing_key
 FROM 
     (SELECT t.conkey,
         t.confkey,
