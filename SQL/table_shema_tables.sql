@@ -1,3 +1,4 @@
+/*Запрос для выборки данных на анализ связей между таблицами, чтобы детализировано понимать каскады ссылок.*/
 SELECT reference_to,
         attr1.attname AS source_key,
         reference_from,
@@ -17,5 +18,5 @@ LEFT JOIN pg_attribute attr1
         AND attr1.attrelid = shema_table_result.confrelid
 LEFT JOIN pg_attribute attr2
     ON attr2.attnum = shema_table_result.conkey
-        AND attr2.attrelid = shema_table_result.conrelid
+        AND attr2.attrelid = shema_table_result.conrelid;
             
